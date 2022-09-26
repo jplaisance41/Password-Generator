@@ -14,7 +14,11 @@ body,
 
 body {
   font-family: sans-serif;
-  background-color: #f9fbfd;
+}
+
+body {
+  background-image: url(images/background.jpg);
+  background-size: 100%;
 }
 
 .wrapper {
@@ -31,12 +35,13 @@ header {
 }
 
 .card {
-  background-color: hsl(0, 0%, 100%);
-  border-radius: 5px;
+  background-color: hsl(256, 99%, 29%);
+  border-radius: 150px;
   border-width: 1px;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px 0px;
-  color: hsl(206, 17%, 28%);
-  font-size: 18px;
+  color: hsl(206, 95%, 76%);
+  font-size: 24px;
+  text-align: center;
   margin: 0 auto;
   max-width: 800px;
   padding: 30px 40px;
@@ -46,12 +51,13 @@ header {
   content: " ";
   display: block;
   width: 100%;
-  background: #e7e9eb;
+  background: #ff3232;
   height: 2px;
 }
 
 .card-body {
   min-height: 100px;
+  color: #ff3232;
 }
 
 .card-footer {
@@ -62,7 +68,7 @@ header {
   content: " ";
   display: block;
   width: 100%;
-  background: #e7e9eb;
+  background: #ff3232;
   height: 2px;
 }
 
@@ -112,7 +118,7 @@ button[disabled] {
   text-align: center;
   margin-top: 10px;
   margin-bottom: 10px;
-  border: 2px dashed #c0c7cf;
+  border: 2px solid hsl(206, 95%, 76%);
   border-radius: 6px;
   resize: none;
   overflow: hidden;
