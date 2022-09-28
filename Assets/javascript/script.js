@@ -3,17 +3,13 @@ var generateBtn = document.querySelector("#generate");
 
 // Function for random integer
 function randomInt(min, max) {
-  if (!max) {
-    max = min
-    min = 0
-  }
-  var rand = Math.random()
-  return Math.floor(min*(1 - rand + rand*max))
+  return Math.floor(Math.random() * (max - min) + min)
 }
 
 // Function to get random item
 function getRandomItem(list) {
-  return list[randomInt(list.length)]
+  return list[randomInt(0, list.length)]
+  
 }
 
 // Function for prompt window, when user clicks 'Generate Password' button
@@ -53,27 +49,32 @@ var uppercaseList = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L",
 var lowercaseList = [ "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
 
 var options = []
-if (passwordHasNumbers --- true) {
-  options.push(passwordHasNumbers)
+if (passwordHasNumbers === true) {
+  options.push(...numberList)
 }
-if (passwordHasSymbols --- true) {
-  options.push(passwordHasSymbols)
+if (passwordHasSymbols === true) {
+  options.push(...symbolsList)
 }
-if (passwordHasUppercase --- true) {
-  options.push(passwordHasUppercase)
+if (passwordHasUppercase === true) {
+  options.push(...uppercaseList)
 }
-if (passwordHasLowercase --- true) {
-  options.push(passwordHasLowercase)
+if (passwordHasLowercase === true) {
+  options.push(...lowercaseList)
+}
+if (options.length === 0) {
+  options.push(...lowercaseList)
 }
 
 // Code to generate the password
-var generatePassword = ""
+var generatedPassword = ""
 
 for (var i = 0; i < passwordLength; i++) {
   var randomList = getRandomItem(options)
   var randomCharacter = getRandomItem(randomList)
-  console.log(randomCharacter)
+  generatedPassword += randomCharacter
 }
+
+return generatedPassword
 
 }
 
